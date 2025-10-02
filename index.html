@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Crossplane - DevOps Platform Engineering</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-cube"></i>
+                <span data-en="Learn Crossplane" data-he="למד Crossplane">Learn Crossplane</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link" data-en="Home" data-he="בית">Home</a>
+                <a href="#what-is" class="nav-link" data-en="What is Crossplane?" data-he="מה זה Crossplane?">What is Crossplane?</a>
+                <a href="#getting-started" class="nav-link" data-en="Getting Started" data-he="התחלה">Getting Started</a>
+                <a href="#tutorials" class="nav-link" data-en="Tutorials" data-he="מדריכים">Tutorials</a>
+                <a href="#compositions" class="nav-link" data-en="Compositions" data-he="Compositions">Compositions</a>
+                <a href="#resources" class="nav-link" data-en="Resources" data-he="משאבים">Resources</a>
+            </div>
+            <div class="nav-controls">
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </button>
+                <div class="language-switcher">
+                    <button class="lang-toggle" onclick="toggleLanguageDropdown()">
+                        <i class="fas fa-globe"></i>
+                        <span id="current-lang">English</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <button class="lang-option" onclick="switchLanguage('en')" data-lang="en">
+                            <span class="lang-flag">🇺🇸</span>
+                            <span class="lang-name">English</span>
+                        </button>
+                        <button class="lang-option" onclick="switchLanguage('he')" data-lang="he">
+                            <span class="lang-flag">🇮🇱</span>
+                            <span class="lang-name">עברית</span>
+                        </button>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-en="Master Crossplane for DevOps" data-he="שלוט ב-Crossplane עבור DevOps">
+                    Master Crossplane for DevOps
+                </h1>
+                <p class="hero-subtitle" data-en="Learn the cloud-native framework for platform engineering. Build control planes like cloud providers with Kubernetes." data-he="למד את המסגרת cloud-native להנדסת פלטפורמות. בנה control planes כמו ספקי ענן עם Kubernetes.">
+                    Learn the cloud-native framework for platform engineering. Build control planes like cloud providers with Kubernetes.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('getting-started')" data-en="Start Learning" data-he="התחל ללמוד">Start Learning</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('what-is')" data-en="Learn More" data-he="למד עוד">Learn More</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="crossplane-logo">
+                    <i class="fas fa-cube"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Crossplane Section -->
+    <section id="what-is" class="section">
+        <div class="container">
+            <h2 class="section-title" data-en="What is Crossplane?" data-he="מה זה Crossplane?">What is Crossplane?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 data-en="Control Planes" data-he="Control Planes">Control Planes</h3>
+                    <p data-en="Build your own APIs and services with control planes that manage infrastructure declaratively." data-he="בנה APIs ושירותים משלך עם control planes שמנהלים תשתית באופן declarative.">
+                        Build your own APIs and services with control planes that manage infrastructure declaratively.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <h3 data-en="Extend Kubernetes" data-he="הרחב את Kubernetes">Extend Kubernetes</h3>
+                    <p data-en="Use Kubernetes to manage any resource anywhere - not just containers, but databases, networks, and more." data-he="השתמש ב-Kubernetes כדי לנהל כל משאב בכל מקום - לא רק containers, אלא גם databases, networks ועוד.">
+                        Use Kubernetes to manage any resource anywhere - not just containers, but databases, networks, and more.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3 data-en="Component Library" data-he="ספריית רכיבים">Component Library</h3>
+                    <p data-en="Use a library of components to assemble your platform faster with pre-built integrations." data-he="השתמש בספריית רכיבים כדי להרכיב את הפלטפורמה שלך מהר יותר עם אינטגרציות מוכנות מראש.">
+                        Use a library of components to assemble your platform faster with pre-built integrations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section id="getting-started" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-en="Getting Started" data-he="התחלה">Getting Started</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 data-en="Install Crossplane" data-he="התקן את Crossplane">Install Crossplane</h3>
+                        <p data-en="Install Crossplane on your Kubernetes cluster using Helm or kubectl." data-he="התקן את Crossplane על ה-Kubernetes cluster שלך באמצעות Helm או kubectl.">
+                            Install Crossplane on your Kubernetes cluster using Helm or kubectl.
+                        </p>
+                        <div class="code-block">
+                            <code>kubectl create namespace crossplane-system</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 data-en="Install a Provider" data-he="התקן Provider">Install a Provider</h3>
+                        <p data-en="Install a provider to manage resources from your cloud provider (AWS, GCP, Azure)." data-he="התקן provider כדי לנהל משאבים מספק הענן שלך (AWS, GCP, Azure).">
+                            Install a provider to manage resources from your cloud provider (AWS, GCP, Azure).
+                        </p>
+                        <div class="code-block">
+                            <code>kubectl apply -f provider-aws.yaml</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 data-en="Create Resources" data-he="צור משאבים">Create Resources</h3>
+                        <p data-en="Define and create cloud resources using Kubernetes YAML manifests." data-he="הגדר וצור משאבי ענן באמצעות Kubernetes YAML manifests.">
+                            Define and create cloud resources using Kubernetes YAML manifests.
+                        </p>
+                        <div class="code-block">
+                            <code>kubectl apply -f my-resources.yaml</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorials Section -->
+    <section id="tutorials" class="section">
+        <div class="container">
+            <h2 class="section-title" data-en="Interactive Tutorials" data-he="מדריכים אינטראקטיביים">Interactive Tutorials</h2>
+            <div class="tutorials-grid">
+                <div class="tutorial-card">
+                    <div class="tutorial-header">
+                        <i class="fas fa-play-circle"></i>
+                        <h3 data-en="Basic Concepts" data-he="מושגים בסיסיים">Basic Concepts</h3>
+                    </div>
+                    <p data-en="Learn the fundamental concepts of Crossplane including XRDs, Compositions, and Claims." data-he="למד את המושגים הבסיסיים של Crossplane כולל XRDs, Compositions ו-Claims.">
+                        Learn the fundamental concepts of Crossplane including XRDs, Compositions, and Claims.
+                    </p>
+                    <div class="tutorial-meta">
+                        <span class="difficulty" data-en="Beginner" data-he="מתחיל">Beginner</span>
+                        <span class="duration" data-en="15 min" data-he="15 דקות">15 min</span>
+                    </div>
+                </div>
+                <div class="tutorial-card">
+                    <div class="tutorial-header">
+                        <i class="fas fa-cloud"></i>
+                        <h3 data-en="AWS Provider" data-he="AWS Provider">AWS Provider</h3>
+                    </div>
+                    <p data-en="Create and manage AWS resources like S3 buckets, RDS databases, and VPCs using Crossplane." data-he="צור ונהל משאבי AWS כמו S3 buckets, RDS databases ו-VPCs באמצעות Crossplane.">
+                        Create and manage AWS resources like S3 buckets, RDS databases, and VPCs using Crossplane.
+                    </p>
+                    <div class="tutorial-meta">
+                        <span class="difficulty" data-en="Intermediate" data-he="בינוני">Intermediate</span>
+                        <span class="duration" data-en="30 min" data-he="30 דקות">30 min</span>
+                    </div>
+                </div>
+                <div class="tutorial-card">
+                    <div class="tutorial-header">
+                        <i class="fas fa-layer-group"></i>
+                        <h3 data-en="Compositions" data-he="Compositions">Compositions</h3>
+                    </div>
+                    <p data-en="Build reusable abstractions with Compositions to create higher-level APIs for your platform." data-he="בנה הפשטות לשימוש חוזר עם Compositions כדי ליצור APIs ברמה גבוהה יותר עבור הפלטפורמה שלך.">
+                        Build reusable abstractions with Compositions to create higher-level APIs for your platform.
+                    </p>
+                    <div class="tutorial-meta">
+                        <span class="difficulty" data-en="Advanced" data-he="מתקדם">Advanced</span>
+                        <span class="duration" data-en="45 min" data-he="45 דקות">45 min</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compositions Section -->
+    <section id="compositions" class="section">
+        <div class="container">
+            <h2 class="section-title" data-en="Understanding Compositions" data-he="הבנת Compositions">Understanding Compositions</h2>
+            
+            <!-- What are Compositions -->
+            <div class="composition-intro">
+                <div class="intro-content">
+                    <h3 data-en="What are Compositions?" data-he="מה זה Compositions?">What are Compositions?</h3>
+                    <p data-en="Compositions are the heart of Crossplane's platform engineering capabilities. They allow you to create higher-level abstractions by combining multiple cloud resources into a single, reusable API." data-he="Compositions הם לב היכולות של הנדסת פלטפורמות ב-Crossplane. הם מאפשרים לך ליצור הפשטות ברמה גבוהה יותר על ידי שילוב משאבי ענן מרובים ל-API יחיד לשימוש חוזר.">
+                        Compositions are the heart of Crossplane's platform engineering capabilities. They allow you to create higher-level abstractions by combining multiple cloud resources into a single, reusable API.
+                    </p>
+                </div>
+                <div class="intro-visual">
+                    <div class="composition-diagram">
+                        <div class="xrd-box">
+                            <i class="fas fa-cube"></i>
+                            <span data-en="XRD" data-he="XRD">XRD</span>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="composition-box">
+                            <i class="fas fa-layer-group"></i>
+                            <span data-en="Composition" data-he="Composition">Composition</span>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="resources-box">
+                            <i class="fas fa-cloud"></i>
+                            <span data-en="Cloud Resources" data-he="משאבי ענן">Cloud Resources</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Concepts -->
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h4 data-en="Composition Templates" data-he="תבניות Composition">Composition Templates</h4>
+                    <p data-en="Define the structure and resources that make up your composition using YAML templates." data-he="הגדר את המבנה והמשאבים שמרכיבים את ה-composition שלך באמצעות תבניות YAML.">
+                        Define the structure and resources that make up your composition using YAML templates.
+                    </p>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h4 data-en="Resource References" data-he="הפניות משאבים">Resource References</h4>
+                    <p data-en="Connect resources together using references, allowing outputs from one resource to be used as inputs for another." data-he="חבר משאבים יחד באמצעות הפניות, המאפשרות להשתמש בפלטים ממשאב אחד כקלטים למשאב אחר.">
+                        Connect resources together using references, allowing outputs from one resource to be used as inputs for another.
+                    </p>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h4 data-en="Function Pipeline" data-he="צינור פונקציות">Function Pipeline</h4>
+                    <p data-en="Transform and validate data as it flows through your composition using Crossplane Functions." data-he="שנה ואמת נתונים כפי שהם זורמים דרך ה-composition שלך באמצעות Crossplane Functions.">
+                        Transform and validate data as it flows through your composition using Crossplane Functions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Practical Example -->
+            <div class="example-section">
+                <h3 data-en="Practical Example: Database with VPC" data-he="דוגמה מעשית: מסד נתונים עם VPC">Practical Example: Database with VPC</h3>
+                <p data-en="Let's create a composition that provisions a complete database setup with networking, security groups, and monitoring." data-he="בואו ניצור composition שמספק הגדרת מסד נתונים מלאה עם רשתות, קבוצות אבטחה וניטור.">
+                    Let's create a composition that provisions a complete database setup with networking, security groups, and monitoring.
+                </p>
+                
+                <!-- XRD Definition -->
+                <div class="code-example">
+                    <h4 data-en="1. Define the XRD (Composite Resource Definition)" data-he="1. הגדר את ה-XRD (הגדרת משאב מורכב)">1. Define the XRD (Composite Resource Definition)</h4>
+                    <div class="code-block">
+                        <code>apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xdatabases.example.org
+spec:
+  group: example.org
+  versions:
+  - name: v1alpha1
+    served: true
+    referenceable: true
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+            properties:
+              region:
+                type: string
+                description: AWS region for the database
+              engine:
+                type: string
+                enum: [mysql, postgresql]
+                description: Database engine type
+              instanceClass:
+                type: string
+                description: RDS instance class
+              storageSize:
+                type: integer
+                description: Storage size in GB
+            required: [region, engine, instanceClass, storageSize]
+  claimNames:
+    kind: Database
+    plural: databases</code>
+                    </div>
+                </div>
+
+                <!-- Composition Definition -->
+                <div class="code-example">
+                    <h4 data-en="2. Create the Composition" data-he="2. צור את ה-Composition">2. Create the Composition</h4>
+                    <div class="code-block">
+                        <code>apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: database-with-vpc
+spec:
+  compositeTypeRef:
+    apiVersion: example.org/v1alpha1
+    kind: XDatabase
+  mode: Pipeline
+  pipeline:
+  - step: transform-vpc
+    functionRef:
+      name: function-go-templating
+    input:
+      inline:
+        template: |
+          apiVersion: ec2.aws.crossplane.io/v1beta1
+          kind: VPC
+          metadata:
+            name: {{ .observed.composite.resource.metadata.name }}-vpc
+          spec:
+            forProvider:
+              region: {{ .observed.composite.resource.spec.region }}
+              cidrBlock: "10.0.0.0/16"
+              enableDnsHostnames: true
+              enableDnsSupport: true
+            writeConnectionSecretsToRef:
+              name: {{ .observed.composite.resource.metadata.name }}-vpc-connection
+              namespace: crossplane-system
+  - step: transform-subnet
+    functionRef:
+      name: function-go-templating
+    input:
+      inline:
+        template: |
+          apiVersion: ec2.aws.crossplane.io/v1beta1
+          kind: Subnet
+          metadata:
+            name: {{ .observed.composite.resource.metadata.name }}-subnet
+          spec:
+            forProvider:
+              region: {{ .observed.composite.resource.spec.region }}
+              vpcIdRef:
+                name: {{ .observed.composite.resource.metadata.name }}-vpc
+              cidrBlock: "10.0.1.0/24"
+              availabilityZone: {{ .observed.composite.resource.spec.region }}a
+  - step: transform-security-group
+    functionRef:
+      name: function-go-templating
+    input:
+      inline:
+        template: |
+          apiVersion: ec2.aws.crossplane.io/v1beta1
+          kind: SecurityGroup
+          metadata:
+            name: {{ .observed.composite.resource.metadata.name }}-sg
+          spec:
+            forProvider:
+              region: {{ .observed.composite.resource.spec.region }}
+              vpcIdRef:
+                name: {{ .observed.composite.resource.metadata.name }}-vpc
+              description: "Security group for database"
+              ingress:
+              - fromPort: 3306
+                toPort: 3306
+                protocol: "tcp"
+                cidrBlocks: ["10.0.0.0/16"]
+  - step: transform-rds
+    functionRef:
+      name: function-go-templating
+    input:
+      inline:
+        template: |
+          apiVersion: rds.aws.crossplane.io/v1alpha1
+          kind: DBInstance
+          metadata:
+            name: {{ .observed.composite.resource.metadata.name }}-db
+          spec:
+            forProvider:
+              region: {{ .observed.composite.resource.spec.region }}
+              dbInstanceClass: {{ .observed.composite.resource.spec.instanceClass }}
+              engine: {{ .observed.composite.resource.spec.engine }}
+              allocatedStorage: {{ .observed.composite.resource.spec.storageSize }}
+              vpcSecurityGroupIdRefs:
+              - name: {{ .observed.composite.resource.metadata.name }}-sg
+              dbSubnetGroupNameRef:
+                name: {{ .observed.composite.resource.metadata.name }}-subnet-group
+              masterUsername: admin
+              masterUserPasswordSecretRef:
+                name: {{ .observed.composite.resource.metadata.name }}-db-password
+                key: password
+            writeConnectionSecretsToRef:
+              name: {{ .observed.composite.resource.metadata.name }}-db-connection
+              namespace: crossplane-system</code>
+                    </div>
+                </div>
+
+                <!-- Claim Example -->
+                <div class="code-example">
+                    <h4 data-en="3. Use the Composition with a Claim" data-he="3. השתמש ב-Composition עם Claim">3. Use the Composition with a Claim</h4>
+                    <div class="code-block">
+                        <code>apiVersion: example.org/v1alpha1
+kind: Database
+metadata:
+  name: my-production-db
+  namespace: default
+spec:
+  region: us-west-2
+  engine: postgresql
+  instanceClass: db.t3.micro
+  storageSize: 20</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits -->
+            <div class="benefits-section">
+                <h3 data-en="Why Use Compositions?" data-he="למה להשתמש ב-Compositions?">Why Use Compositions?</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-recycle"></i>
+                        <h4 data-en="Reusability" data-he="שימוש חוזר">Reusability</h4>
+                        <p data-en="Define once, use everywhere. Create standardized infrastructure patterns for your organization." data-he="הגדר פעם אחת, השתמש בכל מקום. צור דפוסי תשתית סטנדרטיים לארגון שלך.">
+                            Define once, use everywhere. Create standardized infrastructure patterns for your organization.
+                        </p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4 data-en="Governance" data-he="ממשל">Governance</h4>
+                        <p data-en="Enforce security policies, compliance requirements, and best practices across all deployments." data-he="אכוף מדיניות אבטחה, דרישות ציות ופרקטיקות מומלצות בכל הפריסות.">
+                            Enforce security policies, compliance requirements, and best practices across all deployments.
+                        </p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-layer-group"></i>
+                        <h4 data-en="Abstraction" data-he="הפשטה">Abstraction</h4>
+                        <p data-en="Hide complexity from application teams while providing simple, consistent APIs." data-he="הסתר מורכבות מצוותי יישומים תוך מתן APIs פשוטים ועקביים.">
+                            Hide complexity from application teams while providing simple, consistent APIs.
+                        </p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-sync"></i>
+                        <h4 data-en="Consistency" data-he="עקביות">Consistency</h4>
+                        <p data-en="Ensure all environments follow the same patterns and configurations." data-he="וודא שכל הסביבות עוקבות אחר אותם דפוסים והגדרות.">
+                            Ensure all environments follow the same patterns and configurations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Features -->
+            <div class="advanced-features">
+                <h3 data-en="Advanced Composition Features" data-he="תכונות מתקדמות של Composition">Advanced Composition Features</h3>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-number">1</div>
+                        <div class="feature-content">
+                            <h4 data-en="Function Pipeline" data-he="צינור פונקציות">Function Pipeline</h4>
+                            <p data-en="Chain multiple functions together to transform, validate, and enrich your resource definitions." data-he="שרשר מספר פונקציות יחד כדי לשנות, לאמת ולהעשיר את הגדרות המשאבים שלך.">
+                                Chain multiple functions together to transform, validate, and enrich your resource definitions.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">2</div>
+                        <div class="feature-content">
+                            <h4 data-en="Environment-Specific Compositions" data-he="Compositions ספציפיים לסביבה">Environment-Specific Compositions</h4>
+                            <p data-en="Create different compositions for dev, staging, and production environments with appropriate resource sizing." data-he="צור compositions שונים עבור סביבות dev, staging ו-production עם גודל משאבים מתאים.">
+                                Create different compositions for dev, staging, and production environments with appropriate resource sizing.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">3</div>
+                        <div class="feature-content">
+                            <h4 data-en="Dynamic Resource Selection" data-he="בחירת משאבים דינמית">Dynamic Resource Selection</h4>
+                            <p data-en="Use functions to conditionally create resources based on input parameters or environment variables." data-he="השתמש בפונקציות כדי ליצור משאבים באופן מותנה בהתבסס על פרמטרי קלט או משתני סביבה.">
+                                Use functions to conditionally create resources based on input parameters or environment variables.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-en="Learning Resources" data-he="משאבי למידה">Learning Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 data-en="Official Documentation" data-he="תיעוד רשמי">Official Documentation</h3>
+                    <p data-en="Comprehensive guides and API references from the Crossplane team." data-he="מדריכים מקיפים והפניות API מצוות Crossplane.">
+                        Comprehensive guides and API references from the Crossplane team.
+                    </p>
+                    <a href="https://docs.crossplane.io/" target="_blank" class="resource-link" data-en="Visit Docs" data-he="בקר בתיעוד">Visit Docs</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3 data-en="GitHub Repository" data-he="מאגר GitHub">GitHub Repository</h3>
+                    <p data-en="Source code, examples, and community contributions on GitHub." data-he="קוד מקור, דוגמאות ותרומות קהילה ב-GitHub.">
+                        Source code, examples, and community contributions on GitHub.
+                    </p>
+                    <a href="https://github.com/crossplane/crossplane" target="_blank" class="resource-link" data-en="View on GitHub" data-he="צפה ב-GitHub">View on GitHub</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fab fa-slack"></i>
+                    </div>
+                    <h3 data-en="Community Slack" data-he="Slack קהילה">Community Slack</h3>
+                    <p data-en="Join the Crossplane community on Slack for help and discussions." data-he="הצטרף לקהילת Crossplane ב-Slack לעזרה ודיונים.">
+                        Join the Crossplane community on Slack for help and discussions.
+                    </p>
+                    <a href="https://crossplane.slack.com/" target="_blank" class="resource-link" data-en="Join Slack" data-he="הצטרף ל-Slack">Join Slack</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 data-en="Video Tutorials" data-he="מדריכי וידאו">Video Tutorials</h3>
+                    <p data-en="Watch step-by-step video tutorials on YouTube and other platforms." data-he="צפה במדריכי וידאו שלב אחר שלב ב-YouTube ובפלטפורמות אחרות.">
+                        Watch step-by-step video tutorials on YouTube and other platforms.
+                    </p>
+                    <a href="https://www.youtube.com/c/Crossplane" target="_blank" class="resource-link" data-en="Watch Videos" data-he="צפה בסרטונים">Watch Videos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-en="Learn Crossplane" data-he="למד Crossplane">Learn Crossplane</h3>
+                    <p data-en="Master the cloud-native framework for platform engineering." data-he="שלוט במסגרת cloud-native להנדסת פלטפורמות.">
+                        Master the cloud-native framework for platform engineering.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Quick Links" data-he="קישורים מהירים">Quick Links</h4>
+                    <ul>
+                        <li><a href="#what-is" data-en="What is Crossplane?" data-he="מה זה Crossplane?">What is Crossplane?</a></li>
+                        <li><a href="#getting-started" data-en="Getting Started" data-he="התחלה">Getting Started</a></li>
+                        <li><a href="#tutorials" data-en="Tutorials" data-he="מדריכים">Tutorials</a></li>
+                        <li><a href="#compositions" data-en="Compositions" data-he="Compositions">Compositions</a></li>
+                        <li><a href="#resources" data-en="Resources" data-he="משאבים">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="External Links" data-he="קישורים חיצוניים">External Links</h4>
+                    <ul>
+                        <li><a href="https://www.crossplane.io/" target="_blank">Crossplane.io</a></li>
+                        <li><a href="https://docs.crossplane.io/" target="_blank">Documentation</a></li>
+                        <li><a href="https://github.com/crossplane/crossplane" target="_blank">GitHub</a></li>
+                        <li><a href="https://crossplane.slack.com/" target="_blank">Slack</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Learn Crossplane. Built for educational purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
